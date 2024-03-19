@@ -4,9 +4,11 @@ Un mini site de News en MVC créé par le Groupe 2 WebDev 2024
 
 ## Scripts disponibles
 
-### uniqid
+### `uniqid()`
 
 https://onlinephp.io/c/56cfb
 
-### password_hash
+### `password_hash()` and `password_verify()`
+
+https://onlinephp.io/c/43199
 
