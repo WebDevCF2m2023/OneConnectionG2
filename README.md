@@ -12,3 +12,13 @@ https://onlinephp.io/c/56cfb
 
 https://onlinephp.io/c/43199
 
+## Exemples d'articles
+
+Merci au site https://sql.sh/ pour les exemples d'articles utilisés en développement pendant cet exercice de projet de groupe.
+
+## Utilisateurs de test
+
+### Administrateurs
+
+- `Mikhawa` / `Mikhawa`
+- `PierreSandron` / `PierreSandron`
