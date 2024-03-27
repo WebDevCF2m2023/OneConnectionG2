@@ -100,17 +100,42 @@ SELECT article.ar_id, article.ar_title,
 		ON category_has_article.category_cg_id = category.cg_id
 	;
     
-    /*
-On selectionne les champs ar_id, ar_title de la  table article
-avec les us_id et us_login de la table user avec une jointure interne et les cg_id et cg_name si ils existent (facultatif)
+/*
+On sélectionne les champs ar_id, ar_title de la table article
+avec les us_id et us_login de la table user avec une
+jointure interne (obligation de jointure) et les cg_id et cg_name si ils existent (facultatif)
 
-On va utiliser les alias de tables (internes)
+On va utiliser les alias de tables (internes), en général une
+à trois lettres, écrite après l'appel de la table (Personnellement je n'utilise pas la AS), pour pouvoir raccourcir les requêtes, mais surtout pour pouvoir faire des requêtes imbriquées.
+
+Les alias de sortie sont les noms des résultats envoyés en dehors de la requête. J'utilise AS
 */
+SELECT a.ar_id AS idarticle, a.ar_title,
+		u.us_id AS iduser, u.us_login,
+        c.cg_id AS idcategory, c.cg_name
+	FROM article a
+    INNER JOIN `user` u
+		ON u.us_id = a.user_us_id
+	LEFT JOIN category_has_article h
+		ON h.article_ar_id = a.ar_id
+	LEFT JOIN category c
+		ON h.category_cg_id = c.cg_id
+        ;
+        
+/*
+On sélectionne les champs ar_id, ar_title de la table article
+avec les us_id et us_login de la table user avec une
+jointure interne (obligation de jointure) et les cg_id et cg_name si ils existent (facultatif)
 
+
+Nous avons des duplications de lignes non désirées. Nous voulons obtenir 1 ligne par article.
+Pour celà nous allons 
+
+*/
 SELECT a.ar_id, a.ar_title,
 		u.us_id, u.us_login,
-		GROUP_CONCAT(c.cg_id) AS cg_id,
-        GROUP_CONCAT(C.cg_name SEPARATOR '|||') AS cg_name
+        GROUP_CONCAT(c.cg_id) AS cg_id, 
+        GROUP_CONCAT(c.cg_name SEPARATOR '|||') AS cg_name
 	FROM article a
     INNER JOIN `user` u
 		ON u.us_id = a.user_us_id
@@ -119,4 +144,4 @@ SELECT a.ar_id, a.ar_title,
 	LEFT JOIN category c
 		ON h.category_cg_id = c.cg_id
 	GROUP BY a.ar_id
-	;
+        ;
