@@ -17,6 +17,9 @@ https://onlinephp.io/c/56cfb
 
 https://onlinephp.io/c/43199
 
+## Jointures SQL
+![SQL JOIN](https://raw.githubusercontent.com/WebDevCF2m2023/BetterConnectionG1/main/public/img/sql-joins.jpg)
+
 ## Exemples d'articles
 
 Merci au site https://sql.sh/ pour les exemples d'articles utilisés en développement pendant cet exercice de projet de groupe.
