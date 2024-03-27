@@ -26,6 +26,7 @@ CREATE TABLE IF NOT EXISTS `oneconnectiong2`.`user` (
   `us_pwd` VARCHAR(255) CHARACTER SET 'utf8mb4' COLLATE 'utf8mb4_bin' NULL COMMENT 'bin case sensitive',
   `us_email` VARCHAR(150) NULL,
   `us_active` TINYINT UNSIGNED NULL,
+  `us_uniq_id` VARCHAR(40) CHARACTER SET 'utf8mb4' COLLATE 'utf8mb4_bin' NULL,
   PRIMARY KEY (`us_id`))
 ENGINE = InnoDB;
 
@@ -45,12 +46,12 @@ CREATE TABLE IF NOT EXISTS `oneconnectiong2`.`article` (
   `ar_text` TEXT NOT NULL,
   `ar_datetime` DATETIME NULL DEFAULT CURRENT_TIMESTAMP,
   `ar_is_published` TINYINT UNSIGNED NOT NULL,
-  `user_us_id` INT UNSIGNED NOT NULL,
+  `user_us_id` INT UNSIGNED NULL,
   PRIMARY KEY (`ar_id`),
   CONSTRAINT `fk_article_user1`
     FOREIGN KEY (`user_us_id`)
     REFERENCES `oneconnectiong2`.`user` (`us_id`)
-    ON DELETE NO ACTION
+    ON DELETE SET NULL
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
 AUTO_INCREMENT = 3
