@@ -27,3 +27,4 @@ Merci au site https://sql.sh/ pour les exemples d'articles utilisés en dévelop
 
 - `Mikhawa` / `Mikhawa`
 - `PierreSandron` / `PierreSandron`
+- `Logan` / `Logan`
