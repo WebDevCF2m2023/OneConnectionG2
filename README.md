@@ -34,4 +34,4 @@ Merci au site https://sql.sh/ pour les exemples d'articles utilisés en dévelop
 
 ### Exercice 1
 dans view\homepage.html.php, affichez le menu avec les catégories récupérés sur le contrôleur frontal, en faisant des liens de type 
-    <a href="category=2">MySQL</a>
+    `<a href="category=2">MySQL</a>`
