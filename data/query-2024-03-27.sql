@@ -148,3 +148,17 @@ SELECT a.ar_id, a.ar_title,
 		ON h.category_cg_id = c.cg_id
 	GROUP BY a.ar_id
         ;
+
+SELECT a.ar_id, a.ar_title,
+		u.us_id, u.us_login,
+        GROUP_CONCAT(c.cg_id) AS cg_id, 
+        GROUP_CONCAT(c.cg_name SEPARATOR '|||') AS cg_name
+	FROM article a
+    INNER JOIN `user` u
+		ON u.us_id = a.user_us_id
+	LEFT JOIN category_has_article h
+		ON h.article_ar_id = a.ar_id
+	LEFT JOIN category c
+		ON h.category_cg_id = c.cg_id
+    GROUP BY a.ar_id
+        ;

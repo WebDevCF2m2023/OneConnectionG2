@@ -2,11 +2,13 @@
 /*
 * Front Controller
 */
-require_once "../config.php";
+
 
 /*
 Chargement des dépendances
 */
+require_once "../config.php";
+// modèles
 require_once "../model/articleModel.php";
 require_once "../model/categoryModel.php";
 require_once "../model/userModel.php";
@@ -21,7 +23,15 @@ try{
     die($e->getMessage());
 }
 
-var_dump($db,$_POST);
+/*
+Pour la homepage
+On va récupérer le menu (liste de catégories + retour à l'accueil)
+On va récupérer tous les articles par ordre de ar_datetime DESC avec les auteurs (obligatoire) et les catégories (si elles existent), si ar_is_published vaut 1
+*/
+
+/*
+Appel de la vue homepage
+*/
 
 // bonne pratique
 $db = null;
