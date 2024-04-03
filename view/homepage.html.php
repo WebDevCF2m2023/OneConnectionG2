@@ -13,8 +13,10 @@
             <ul>
                 <li><a href="./">Accueil</a></li>
                 <?php
-
+                foreach($menu as $category):
                 ?>
+                <li><a href="./?category=<?=$category['cg_id']?>"><?=$category['cg_name']?></a></li>
+                <?php endforeach;?>
                 <li><a href="./?connect">Connexion</a></li>
             </ul>
         </nav>
