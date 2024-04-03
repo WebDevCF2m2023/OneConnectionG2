@@ -35,3 +35,15 @@ Merci au site https://sql.sh/ pour les exemples d'articles utilisés en dévelop
 ### Exercice 1
 dans view\homepage.html.php, affichez le menu avec les catégories récupérés sur le contrôleur frontal, en faisant des liens de type 
     `<a href="?category=2">MySQL</a>`
+
+### Exercice 2
+
+On doit charger tous les articles (champs : ar_id, ar_title, ar_text(que les 260 premier caractères), ar_datetime) de la table article
+
+AINSI que les champs (us_id, us_login) de la table user (obligatoires : jointure interne: JOIN INNER JOIN) 
+
+        AINSI que les champs (cg_id, cd_name) de la table category (Non obligatoire, les articles sont prioritaires, jointure externe de type LEFT JOIN)
+
+si ils sont publiés (ar_is_published=1) 
+        
+        par ar_datetime DESC
