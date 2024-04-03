@@ -29,6 +29,10 @@ On va récupérer le menu (liste de catégories + retour à l'accueil)
 On va récupérer tous les articles par ordre de ar_datetime DESC avec les auteurs (obligatoire) et les catégories (si elles existent), si ar_is_published vaut 1
 */
 
+$menu = getAllVisibleCategory($db);
+
+// var_dump($menu);
+
 /*
 Appel de la vue homepage
 */
