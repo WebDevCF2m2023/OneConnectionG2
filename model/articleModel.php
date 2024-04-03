@@ -8,7 +8,7 @@ function getArticles(PDO $connect) : array|string
         GROUP_CONCAT(category.cg_name SEPARATOR '|||') AS cg_name,
         article.ar_id,
         article.ar_title,
-        article.ar_text,
+        LEFT(article.ar_text, 260) AS ar_text,
         article.ar_datetime,
         user.us_login,
         user.us_id
@@ -22,7 +22,7 @@ function getArticles(PDO $connect) : array|string
     try{
         $query = $connect->query($sql);
 
-        if($query->rowCount()==0) return "Pas de rubriques";
+        if($query->rowCount()==0) return "Pas d'articles";
 
         $result = $query->fetchAll();
 
