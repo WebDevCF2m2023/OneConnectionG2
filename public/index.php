@@ -32,6 +32,7 @@ On va récupérer tous les articles par ordre de ar_datetime DESC avec les auteu
 /*
 Appel de la vue homepage
 */
+require "../view/homepage.html.php";
 
 // bonne pratique
 $db = null;
