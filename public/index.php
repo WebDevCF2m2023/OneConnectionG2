@@ -48,7 +48,7 @@ si ils sont publiés (ar_is_published=1)
 $homepageArticle = getHomepageArticle($db);
 
 // var_dump($menu);
-var_dump($homepageArticle);
+// var_dump($homepageArticle);
 /*
 Appel de la vue homepage
 */
